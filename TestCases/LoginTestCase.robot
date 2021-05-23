@@ -20,6 +20,7 @@ ${emailDetails}  class:Profile-email
 ${accDetailsDiv}  class:MyAccountPage-value
 *** Test Cases ***
 LoginTest
+    [Documentation]  This testcase verifies that the user can succesfully login via facebook, and that email is uneditable post login
     open browser    ${url}  ${browser}
     wait until element is visible    ${dialogBoxCancel}
     click button  ${dialogBoxCancel}
