@@ -4,27 +4,40 @@ Library  SeleniumLibrary
 *** Variables ***
 ${browser}  chrome
 ${url}  https://www.ounass.ae/
-
+${dialogBoxCancel}  id:wzrk-cancel
+${account}  class:Popup-button
+${fbDiv}  class:SignInThirdpartyButtons-facebookButton
+${fbLogin}  class:SignInThirdpartyButtons-facebookButton
+${fbPage}  class:_9axz
+${fbEmail}  id:email
+${fbPass}  id:pass
+${fbLoginBtn}  id:loginbutton
+${mainDiv}  class:Base-content
+${accDiv}  class:Popup-iconText
+${myAccount}  My Account
+${edit}  Edit
+${emailDetails}  class:Profile-email
+${accDetailsDiv}  class:MyAccountPage-value
 *** Test Cases ***
 LoginTest
     open browser    ${url}  ${browser}
-    wait until element is visible    id:wzrk-cancel
-    click button  id:wzrk-cancel
-    wait until element is visible  class:Popup-button
-    click button  class:Popup-button
-    wait until element is visible  class:SignInThirdpartyButtons-facebookButton
-    click button  class:SignInThirdpartyButtons-facebookButton
-    wait until element is visible  class:_9axz
-    input text  id:email  samad@werplay.com
-    input text  id:pass  werplayru55
-    click button  id:loginbutton
-    wait until element is visible  class:Base-content
-    mouse over  class:Popup-iconText
-    click link  My Account
-    wait until element is visible  class:MyAccountPage-value
-    click link  Edit
-    wait until element is visible  class:Profile-email
-    element should be disabled  class:Profile-email
+    wait until element is visible    ${dialogBoxCancel}
+    click button  ${dialogBoxCancel}
+    wait until element is visible  ${account}
+    click button  ${account}
+    wait until element is visible  ${fbDiv}
+    click button  ${fbLogin}
+    wait until element is visible  ${fbPage}
+    input text  ${fbEmail}  samad@werplay.com
+    input text  ${fbPass}  werplayru55
+    click button  ${fbLoginBtn}
+    wait until element is visible  ${mainDiv}
+    mouse over  ${accDiv}
+    click link  ${myAccount}
+    wait until element is visible  ${accDetailsDiv}
+    click link  ${edit}
+    wait until element is visible  ${emailDetails}
+    element should be disabled  ${emailDetails}
     close browser
 
 *** Keywords ***
