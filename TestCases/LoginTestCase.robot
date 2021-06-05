@@ -36,6 +36,13 @@ ${inputLName}  id:lastName
 ${inputEmail}  id:email
 ${inputPhNo}  id:mobileNumber
 ${IncorrectNo}  class:NewAddress-fieldErrorText
+${clothing}  link:CLOTHING
+${searchDesignerProduct}  class:QuickSearch-v2-textBox
+${searchShowAllResult}  link:SHOW ALL RESULTS
+${resultItems}  class:PLP-resultCount
+${totalCountItems}
+${productBrand}  class:Product-brand
+${comparison}
 *** Test Cases ***
 LoginTest
     [Documentation]  Valid Login / Email editing disabled post login]
@@ -55,9 +62,15 @@ CheckOut
     Add Products
     CheckOut
     close browser
+ProductListing
+    [Documentation]  Search for designer items resulting items should be 2 and accurate
+    launchBrowser
+    dismissDialog
+    Search For Designer
+    Validate Designer Results
 *** Keywords ***
 launchBrowser
-    open browser    ${url}  ${browser}
+    open browser    ${url}  ${browser}  timeout 5
     maximize browser window
 dismissDialog
     wait until element is visible    ${dialogBoxCancel}
@@ -120,5 +133,20 @@ CheckOut
     input text  ${inputPhNo}  67324238
     Press Keys  None  TAB
     element should not be visible  ${IncorrectNo} , Phone number is not accurate
+Search For Designer
+    click link  ${women}
+    wait until element is visible  ${clothing}
+    click link  ${clothing}
+    wait until element is visible  ${searchDesignerProduct}
+    press keys  ${searchDesignerProduct}  Christian Sirano
+    wait until element is visible  ${searchShowAllResult}
+    click link  ${searchShowAllResult}
+Validate Designer Results
+    wait until element is visible  ${resultItems}
+    ${totalCountItems}=  get element attribute  ${resultItems}  data-total-hits
+    log to console  ${totalCountItems}
+    run keyword and continue on failure  should be equal  ${totalCountItems}  2  as per given instructions resulting items should be 2
+    ${comparison}=  get text  ${productBrand}
+    should be equal  ${comparison}  Christian Sirano  Incorrect products displayed
 FinishTests
     close browser
