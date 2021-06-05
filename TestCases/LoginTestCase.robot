@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Test Setup  StartTests
 Test Teardown  FinishTests
 *** Variables ***
 ${browser}  chrome
@@ -46,7 +47,6 @@ ${comparison}
 *** Test Cases ***
 LoginTest
     [Documentation]  Valid Login / Email editing disabled post login]
-    launchBrowser
     dismissDialog
     navigateFBLogin
     loginfb
@@ -54,7 +54,6 @@ LoginTest
     close browser
 CheckOut
     [Documentation]  Shop Items and proceed to checkout
-    launchBrowser
     dismissDialog
     click link   ${women}
     wait until element is visible  ${sale}
@@ -64,13 +63,14 @@ CheckOut
     close browser
 ProductListing
     [Documentation]  Search for designer items resulting items should be 2 and accurate
-    launchBrowser
     dismissDialog
     Search For Designer
     Validate Designer Results
 *** Keywords ***
+StartTests
+    launchBrowser
 launchBrowser
-    open browser    ${url}  ${browser}  timeout 5
+    open browser    ${url}  ${browser}
     maximize browser window
 dismissDialog
     wait until element is visible    ${dialogBoxCancel}
