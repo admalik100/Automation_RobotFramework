@@ -1,5 +1,6 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  String
 *** Variables ***
 ${browser}  chrome
 ${url}  https://www.ounass.ae/
@@ -42,6 +43,21 @@ ${resultItems}  class:PLP-resultCount
 ${totalCountItems}
 ${productBrand}  class:Product-brand
 ${comparison}
+${createUser}  class:CustomerPopup-signUpButton
+${registerFName}  class:Profile-firstName
+${registerLName}  class:Profile-lastName
+${registerEmail}  class:Profile-email
+${registerPwd}  name:password
+${registerSubmit}  class:Profile-signUpButton
+${emailSubstring}
+${emailSubstring1}  @gmail.com
+${emailGenerated}
+${addressBook}  link:My Address Book
+${addAddress}  class:EmptyPage-callToAction
+${navBar}  class:CategoryNavigation-wrapper
+${accountNav}  class:Popup-button
+${dum}  class:SellingPoints-title
+
 *** Keywords ***
 StartTests
     launchBrowser
@@ -103,9 +119,18 @@ CheckOut
     wait until element is visible  ${mainDiv}
     click button  ${btnCheckout}
     wait until element is visible  ${mainDiv}
+    InputDetails
+    #check if it fails later on
+InputDetails
     input text  ${inputFName}  John
     input text  ${inputLName}  Doe
     input text  ${inputEmail}  John@gmail.com
+    input text  ${inputPhNo}  67324238
+    Press Keys  None  TAB
+    element should not be visible  ${IncorrectNo} , Phone number is not accurate
+InputDetailsWithoutEmail
+    input text  ${inputFName}  John
+    input text  ${inputLName}  Doe
     input text  ${inputPhNo}  67324238
     Press Keys  None  TAB
     element should not be visible  ${IncorrectNo} , Phone number is not accurate
@@ -124,5 +149,30 @@ Validate Designer Results
     run keyword and continue on failure  should be equal  ${totalCountItems}  2  as per given instructions resulting items should be 2
     ${comparison}=  get text  ${productBrand}
     should be equal  ${comparison}  Christian Sirano  Incorrect products displayed
+NavigateToRegisterUser
+    sleep  1
+    mouse over  ${accountNav}
+    wait until element is visible  ${createUser}
+    click element  ${createUser}
+    wait until element is visible  ${registerFName}
+    input text  ${registerFName}  John
+    input text  ${registerLName}  Doe
+    # Create a random Email
+    ${emailSubstring}=  generate random string  4  [LETTERS][NUMBERS]
+    ${emailGenerated}=  catenate  SEPARATOR=  ${emailSubstring}  ${emailSubstring1}
+    log to console  ${emailGenerated}
+    input text  ${registerEmail}  ${emailGenerated}
+    input text  ${registerPwd}  123456789
+    click button  ${registerSubmit}
+    wait until element is visible  ${dum}
+VerifyEmailAndAddPhNo
+    checkEmaileditDisabled
+    AddPhNo
+AddPhNo
+    click link  ${addressBook}
+    wait until element is visible  ${addAddress}
+    click element  ${addAddress}
+    wait until element is visible  ${inputFName}
+    InputDetailsWithoutEmail
 FinishTests
     close browser

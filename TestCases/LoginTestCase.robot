@@ -3,7 +3,12 @@ Documentation  Ounass Automation Framework Prototype
 Resource  ../Resources/CommonResources.robot
 Test Setup  StartTests
 Test Teardown  FinishTests
+
 *** Test Cases ***
+Register User Verify Email And Update Ph No
+    dismissDialog
+    NavigateToRegisterUser
+    VerifyEmailAndAddPhNo
 LoginTest
     [Documentation]  Valid Login / Email editing disabled post login]
     dismissDialog
@@ -25,3 +30,5 @@ ProductListing
     dismissDialog
     Search For Designer
     Validate Designer Results
+
+*** Keywords ***
