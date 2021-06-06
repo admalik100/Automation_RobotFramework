@@ -15,7 +15,9 @@ ${fbLoginBtn}  id:loginbutton
 ${mainDiv}  class:Base-content
 ${accDiv}  class:Popup-iconText
 ${myAccount}  My Account
+${myAccountArabic}  حسابي
 ${edit}  Edit
+${editArabic}  تعديل
 ${emailDetails}  class:Profile-email
 ${accDetailsDiv}  class:MyAccountPage-value
 ${women}  link:WOMEN
@@ -53,11 +55,12 @@ ${emailSubstring}
 ${emailSubstring1}  @gmail.com
 ${emailGenerated}
 ${addressBook}  link:My Address Book
+${addressBookArabic}  link:دفتر العناوين
 ${addAddress}  class:EmptyPage-callToAction
 ${navBar}  class:CategoryNavigation-wrapper
 ${accountNav}  class:Popup-button
 ${Wait}  class:SellingPoints-title
-
+${changeLang}  link:العربيّة
 *** Keywords ***
 StartTests
     launchBrowser
@@ -84,6 +87,14 @@ checkEmaileditDisabled
     click link  ${myAccount}
     wait until element is visible  ${accDetailsDiv}
     click link  ${edit}
+    wait until element is visible  ${emailDetails}
+    element should be disabled  ${emailDetails}
+checkEmaileditDisabledArabic
+    wait until element is visible  ${accDiv}
+    mouse over  ${accDiv}
+    click link  ${myAccountArabic}
+    wait until element is visible  ${accDetailsDiv}
+    click link  ${editArabic}
     wait until element is visible  ${emailDetails}
     element should be disabled  ${emailDetails}
 Check Availability of Item
@@ -169,11 +180,25 @@ NavigateToRegisterUser
 VerifyEmailAndAddPhNo
     checkEmaileditDisabled
     AddPhNo
+VerifyEmailAndAddPhNoArabic
+    ${status}=  run keyword and return status  element should be visible    ${dialogBoxCancel}
+    run keyword if  ${status} == True  dismissDialog
+    checkEmaileditDisabledArabic
+    AddPhNoArabic
 AddPhNo
     click link  ${addressBook}
     wait until element is visible  ${addAddress}
     click element  ${addAddress}
     wait until element is visible  ${inputFName}
     InputDetailsWithoutEmail
+AddPhNoArabic
+    click link  ${addressBookArabic}
+    wait until element is visible  ${addAddress}
+    click element  ${addAddress}
+    wait until element is visible  ${inputFName}
+    InputDetailsWithoutEmail
+ChangeLanguageToArabic
+    wait until element is visible  ${changeLang}
+    click link  ${changeLang}
 FinishTests
     close browser

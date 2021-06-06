@@ -1,88 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.0.2 (Python 3.9.5 on darwin)" generated="20210606 16:39:33.875" rpa="false" schemaversion="2">
-<suite id="s1" name="TestSuite" source="/Users/ahmadamir/PycharmProjects/RobotFrameWorkAutomation/TestCases/TestSuite.robot">
-<test id="s1-t1" name="Register User Verify Email And Update Ph No">
+<robot generator="Robot 4.0.2 (Python 3.9.5 on darwin)" generated="20210606 17:01:57.089" rpa="false" schemaversion="2">
+<suite id="s1" name="TestSuiteArabic" source="/Users/ahmadamir/PycharmProjects/RobotFrameWorkAutomation/TestCases/TestSuiteArabic.robot">
+<test id="s1-t1" name="Arabic Register User Verify Email And Update Ph No">
 <kw name="StartTests" library="CommonResources" type="SETUP">
 <kw name="launchBrowser" library="CommonResources">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210606 16:39:33.993" level="INFO">Opening browser 'chrome' to base url 'https://www.ounass.ae/'.</msg>
-<status status="PASS" starttime="20210606 16:39:33.993" endtime="20210606 16:39:41.606"/>
+<msg timestamp="20210606 17:01:57.211" level="INFO">Opening browser 'chrome' to base url 'https://www.ounass.ae/'.</msg>
+<status status="PASS" starttime="20210606 17:01:57.211" endtime="20210606 17:02:05.360"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210606 16:39:41.606" endtime="20210606 16:39:41.763"/>
+<status status="PASS" starttime="20210606 17:02:05.360" endtime="20210606 17:02:05.587"/>
 </kw>
-<status status="PASS" starttime="20210606 16:39:33.992" endtime="20210606 16:39:41.763"/>
+<status status="PASS" starttime="20210606 17:01:57.211" endtime="20210606 17:02:05.587"/>
 </kw>
-<status status="PASS" starttime="20210606 16:39:33.992" endtime="20210606 16:39:41.764"/>
+<status status="PASS" starttime="20210606 17:01:57.211" endtime="20210606 17:02:05.587"/>
 </kw>
 <kw name="dismissDialog" library="CommonResources">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${dialogBoxCancel}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:39:41.764" endtime="20210606 16:39:45.004"/>
+<status status="PASS" starttime="20210606 17:02:05.587" endtime="20210606 17:02:08.185"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${dialogBoxCancel}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210606 16:39:45.005" level="INFO">Clicking button 'id:wzrk-cancel'.</msg>
-<status status="PASS" starttime="20210606 16:39:45.004" endtime="20210606 16:39:46.330"/>
+<msg timestamp="20210606 17:02:08.186" level="INFO">Clicking button 'id:wzrk-cancel'.</msg>
+<status status="PASS" starttime="20210606 17:02:08.185" endtime="20210606 17:02:09.548"/>
 </kw>
-<status status="PASS" starttime="20210606 16:39:41.764" endtime="20210606 16:39:46.330"/>
+<status status="PASS" starttime="20210606 17:02:05.587" endtime="20210606 17:02:09.548"/>
+</kw>
+<kw name="ChangeLanguageToArabic" library="CommonResources">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${changeLang}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210606 17:02:09.549" endtime="20210606 17:02:09.853"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${changeLang}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20210606 17:02:09.854" level="INFO">Clicking link 'link:العربيّة'.</msg>
+<status status="PASS" starttime="20210606 17:02:09.853" endtime="20210606 17:02:10.017"/>
+</kw>
+<status status="PASS" starttime="20210606 17:02:09.549" endtime="20210606 17:02:10.017"/>
 </kw>
 <kw name="NavigateToRegisterUser" library="CommonResources">
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210606 16:39:47.331" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20210606 16:39:46.330" endtime="20210606 16:39:47.332"/>
+<msg timestamp="20210606 17:02:11.019" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210606 17:02:10.017" endtime="20210606 17:02:11.019"/>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${accountNav}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20210606 16:39:47.335" level="INFO">Simulating Mouse Over on element 'class:Popup-button'.</msg>
-<status status="PASS" starttime="20210606 16:39:47.333" endtime="20210606 16:39:47.655"/>
+<msg timestamp="20210606 17:02:11.019" level="INFO">Simulating Mouse Over on element 'class:Popup-button'.</msg>
+<status status="PASS" starttime="20210606 17:02:11.019" endtime="20210606 17:02:15.038"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${createUser}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:39:47.655" endtime="20210606 16:39:47.681"/>
+<status status="PASS" starttime="20210606 17:02:15.038" endtime="20210606 17:02:15.165"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${createUser}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210606 16:39:47.681" level="INFO">Clicking element 'class:CustomerPopup-signUpButton'.</msg>
-<status status="PASS" starttime="20210606 16:39:47.681" endtime="20210606 16:39:52.362"/>
+<msg timestamp="20210606 17:02:15.166" level="INFO">Clicking element 'class:CustomerPopup-signUpButton'.</msg>
+<status status="PASS" starttime="20210606 17:02:15.165" endtime="20210606 17:02:19.347"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${registerFName}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:39:52.362" endtime="20210606 16:39:52.394"/>
+<status status="PASS" starttime="20210606 17:02:19.347" endtime="20210606 17:02:19.368"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${registerFName}</arg>
 <arg>John</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:39:52.395" level="INFO">Typing text 'John' into text field 'class:Profile-firstName'.</msg>
-<status status="PASS" starttime="20210606 16:39:52.394" endtime="20210606 16:39:52.871"/>
+<msg timestamp="20210606 17:02:19.368" level="INFO">Typing text 'John' into text field 'class:Profile-firstName'.</msg>
+<status status="PASS" starttime="20210606 17:02:19.368" endtime="20210606 17:02:19.839"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${registerLName}</arg>
 <arg>Doe</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:39:52.871" level="INFO">Typing text 'Doe' into text field 'class:Profile-lastName'.</msg>
-<status status="PASS" starttime="20210606 16:39:52.871" endtime="20210606 16:39:52.950"/>
+<msg timestamp="20210606 17:02:19.840" level="INFO">Typing text 'Doe' into text field 'class:Profile-lastName'.</msg>
+<status status="PASS" starttime="20210606 17:02:19.839" endtime="20210606 17:02:19.927"/>
 </kw>
 <kw name="Generate Random String" library="String">
 <var>${emailSubstring}</var>
 <arg>4</arg>
 <arg>[LETTERS][NUMBERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<msg timestamp="20210606 16:39:52.950" level="INFO">${emailSubstring} = Ubsx</msg>
-<status status="PASS" starttime="20210606 16:39:52.950" endtime="20210606 16:39:52.950"/>
+<msg timestamp="20210606 17:02:19.927" level="INFO">${emailSubstring} = 6YI4</msg>
+<status status="PASS" starttime="20210606 17:02:19.927" endtime="20210606 17:02:19.927"/>
 </kw>
 <kw name="Catenate" library="BuiltIn">
 <var>${emailGenerated}</var>
@@ -90,369 +104,202 @@
 <arg>${emailSubstring}</arg>
 <arg>${emailSubstring1}</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<msg timestamp="20210606 16:39:52.951" level="INFO">${emailGenerated} = Ubsx@gmail.com</msg>
-<status status="PASS" starttime="20210606 16:39:52.951" endtime="20210606 16:39:52.951"/>
+<msg timestamp="20210606 17:02:19.928" level="INFO">${emailGenerated} = 6YI4@gmail.com</msg>
+<status status="PASS" starttime="20210606 17:02:19.927" endtime="20210606 17:02:19.928"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${emailGenerated}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210606 16:39:52.951" endtime="20210606 16:39:52.951"/>
+<status status="PASS" starttime="20210606 17:02:19.928" endtime="20210606 17:02:19.928"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${registerEmail}</arg>
 <arg>${emailGenerated}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:39:52.951" level="INFO">Typing text 'Ubsx@gmail.com' into text field 'class:Profile-email'.</msg>
-<status status="PASS" starttime="20210606 16:39:52.951" endtime="20210606 16:39:53.262"/>
+<msg timestamp="20210606 17:02:19.928" level="INFO">Typing text '6YI4@gmail.com' into text field 'class:Profile-email'.</msg>
+<status status="PASS" starttime="20210606 17:02:19.928" endtime="20210606 17:02:20.038"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${registerPwd}</arg>
 <arg>123456789</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:39:53.262" level="INFO">Typing text '123456789' into text field 'name:password'.</msg>
-<status status="PASS" starttime="20210606 16:39:53.262" endtime="20210606 16:39:53.605"/>
+<msg timestamp="20210606 17:02:20.039" level="INFO">Typing text '123456789' into text field 'name:password'.</msg>
+<status status="PASS" starttime="20210606 17:02:20.038" endtime="20210606 17:02:20.319"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>${registerSubmit}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210606 16:39:53.605" level="INFO">Clicking button 'class:Profile-signUpButton'.</msg>
-<status status="PASS" starttime="20210606 16:39:53.605" endtime="20210606 16:39:54.158"/>
+<msg timestamp="20210606 17:02:20.320" level="INFO">Clicking button 'class:Profile-signUpButton'.</msg>
+<status status="PASS" starttime="20210606 17:02:20.319" endtime="20210606 17:02:20.820"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${Wait}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:39:54.158" endtime="20210606 16:40:00.605"/>
+<status status="PASS" starttime="20210606 17:02:20.820" endtime="20210606 17:02:27.111"/>
 </kw>
-<status status="PASS" starttime="20210606 16:39:46.330" endtime="20210606 16:40:00.605"/>
+<status status="PASS" starttime="20210606 17:02:10.017" endtime="20210606 17:02:27.111"/>
 </kw>
-<kw name="VerifyEmailAndAddPhNo" library="CommonResources">
-<kw name="checkEmaileditDisabled" library="CommonResources">
+<kw name="VerifyEmailAndAddPhNoArabic" library="CommonResources">
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${status}</var>
+<arg>element should be visible</arg>
+<arg>${dialogBoxCancel}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${dialogBoxCancel}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210606 17:02:28.046" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210606 17:02:27.118" endtime="20210606 17:02:28.046"/>
+</kw>
+<msg timestamp="20210606 17:02:28.049" level="FAIL">Element with locator 'id:wzrk-cancel' not found.</msg>
+<status status="FAIL" starttime="20210606 17:02:27.111" endtime="20210606 17:02:28.049"/>
+</kw>
+<msg timestamp="20210606 17:02:28.049" level="INFO">${status} = False</msg>
+<status status="PASS" starttime="20210606 17:02:27.111" endtime="20210606 17:02:28.049"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${status} == True</arg>
+<arg>dismissDialog</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20210606 17:02:28.049" endtime="20210606 17:02:28.050"/>
+</kw>
+<kw name="checkEmaileditDisabledArabic" library="CommonResources">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${accDiv}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:00.607" endtime="20210606 16:40:00.629"/>
+<status status="PASS" starttime="20210606 17:02:28.050" endtime="20210606 17:02:28.062"/>
 </kw>
 <kw name="Mouse Over" library="SeleniumLibrary">
 <arg>${accDiv}</arg>
 <doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20210606 16:40:00.629" level="INFO">Simulating Mouse Over on element 'class:Popup-iconText'.</msg>
-<status status="PASS" starttime="20210606 16:40:00.629" endtime="20210606 16:40:01.083"/>
+<msg timestamp="20210606 17:02:28.063" level="INFO">Simulating Mouse Over on element 'class:Popup-iconText'.</msg>
+<status status="PASS" starttime="20210606 17:02:28.063" endtime="20210606 17:02:28.351"/>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
-<arg>${myAccount}</arg>
+<arg>${myAccountArabic}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:01.083" level="INFO">Clicking link 'My Account'.</msg>
-<status status="PASS" starttime="20210606 16:40:01.083" endtime="20210606 16:40:07.533"/>
+<msg timestamp="20210606 17:02:28.351" level="INFO">Clicking link 'حسابي'.</msg>
+<status status="PASS" starttime="20210606 17:02:28.351" endtime="20210606 17:02:33.893"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${accDetailsDiv}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:07.533" endtime="20210606 16:40:07.571"/>
+<status status="PASS" starttime="20210606 17:02:33.893" endtime="20210606 17:02:33.918"/>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
-<arg>${edit}</arg>
+<arg>${editArabic}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:07.571" level="INFO">Clicking link 'Edit'.</msg>
-<status status="PASS" starttime="20210606 16:40:07.571" endtime="20210606 16:40:10.089"/>
+<msg timestamp="20210606 17:02:33.918" level="INFO">Clicking link 'تعديل'.</msg>
+<status status="PASS" starttime="20210606 17:02:33.918" endtime="20210606 17:02:36.185"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${emailDetails}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:10.089" endtime="20210606 16:40:10.110"/>
+<status status="PASS" starttime="20210606 17:02:36.185" endtime="20210606 17:02:36.206"/>
 </kw>
 <kw name="Element Should Be Disabled" library="SeleniumLibrary">
 <arg>${emailDetails}</arg>
 <doc>Verifies that element identified by ``locator`` is disabled.</doc>
-<status status="PASS" starttime="20210606 16:40:10.110" endtime="20210606 16:40:10.120"/>
+<status status="PASS" starttime="20210606 17:02:36.206" endtime="20210606 17:02:36.215"/>
 </kw>
-<status status="PASS" starttime="20210606 16:40:00.606" endtime="20210606 16:40:10.120"/>
+<status status="PASS" starttime="20210606 17:02:28.050" endtime="20210606 17:02:36.215"/>
 </kw>
-<kw name="AddPhNo" library="CommonResources">
+<kw name="AddPhNoArabic" library="CommonResources">
 <kw name="Click Link" library="SeleniumLibrary">
-<arg>${addressBook}</arg>
+<arg>${addressBookArabic}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:10.121" level="INFO">Clicking link 'link:My Address Book'.</msg>
-<status status="PASS" starttime="20210606 16:40:10.120" endtime="20210606 16:40:13.272"/>
+<msg timestamp="20210606 17:02:36.216" level="INFO">Clicking link 'link:دفتر العناوين'.</msg>
+<status status="PASS" starttime="20210606 17:02:36.215" endtime="20210606 17:02:42.834"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${addAddress}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:13.273" endtime="20210606 16:40:13.295"/>
+<status status="PASS" starttime="20210606 17:02:42.834" endtime="20210606 17:02:42.865"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${addAddress}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:13.295" level="INFO">Clicking element 'class:EmptyPage-callToAction'.</msg>
-<status status="PASS" starttime="20210606 16:40:13.295" endtime="20210606 16:40:14.037"/>
+<msg timestamp="20210606 17:02:42.866" level="INFO">Clicking element 'class:EmptyPage-callToAction'.</msg>
+<status status="PASS" starttime="20210606 17:02:42.866" endtime="20210606 17:02:43.606"/>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${inputFName}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:14.037" endtime="20210606 16:40:14.089"/>
+<status status="PASS" starttime="20210606 17:02:43.606" endtime="20210606 17:02:43.629"/>
 </kw>
 <kw name="InputDetailsWithoutEmail" library="CommonResources">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${inputFName}</arg>
 <arg>John</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:14.089" level="INFO">Typing text 'John' into text field 'id:firstName'.</msg>
-<status status="PASS" starttime="20210606 16:40:14.089" endtime="20210606 16:40:14.244"/>
+<msg timestamp="20210606 17:02:43.630" level="INFO">Typing text 'John' into text field 'id:firstName'.</msg>
+<status status="PASS" starttime="20210606 17:02:43.629" endtime="20210606 17:02:43.754"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${inputLName}</arg>
 <arg>Doe</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:14.244" level="INFO">Typing text 'Doe' into text field 'id:lastName'.</msg>
-<status status="PASS" starttime="20210606 16:40:14.244" endtime="20210606 16:40:14.362"/>
+<msg timestamp="20210606 17:02:43.754" level="INFO">Typing text 'Doe' into text field 'id:lastName'.</msg>
+<status status="PASS" starttime="20210606 17:02:43.754" endtime="20210606 17:02:43.860"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${inputPhNo}</arg>
 <arg>67324238</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:14.362" level="INFO">Typing text '67324238' into text field 'id:mobileNumber'.</msg>
-<status status="PASS" starttime="20210606 16:40:14.362" endtime="20210606 16:40:14.624"/>
+<msg timestamp="20210606 17:02:43.860" level="INFO">Typing text '67324238' into text field 'id:mobileNumber'.</msg>
+<status status="PASS" starttime="20210606 17:02:43.860" endtime="20210606 17:02:44.125"/>
 </kw>
 <kw name="Press Keys" library="SeleniumLibrary">
 <arg>None</arg>
 <arg>TAB</arg>
 <doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<msg timestamp="20210606 16:40:14.625" level="INFO">Sending key(s) ('TAB',) to page.</msg>
-<msg timestamp="20210606 16:40:14.625" level="INFO">Pressing special key TAB to browser.</msg>
-<msg timestamp="20210606 16:40:14.625" level="INFO">Releasing special key TAB.</msg>
-<status status="PASS" starttime="20210606 16:40:14.624" endtime="20210606 16:40:14.684"/>
+<msg timestamp="20210606 17:02:44.125" level="INFO">Sending key(s) ('TAB',) to page.</msg>
+<msg timestamp="20210606 17:02:44.126" level="INFO">Pressing special key TAB to browser.</msg>
+<msg timestamp="20210606 17:02:44.126" level="INFO">Releasing special key TAB.</msg>
+<status status="PASS" starttime="20210606 17:02:44.125" endtime="20210606 17:02:44.183"/>
 </kw>
 <kw name="Element Should Not Be Visible" library="SeleniumLibrary">
 <arg>${IncorrectNo} , Phone number is not accurate</arg>
 <doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210606 16:40:14.928" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210606 16:40:14.697" endtime="20210606 16:40:14.928"/>
+<msg timestamp="20210606 17:02:44.470" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210606 17:02:44.199" endtime="20210606 17:02:44.470"/>
 </kw>
-<msg timestamp="20210606 16:40:14.931" level="FAIL">The element 'class:NewAddress-fieldErrorText , Phone number is not accurate' should not be visible, but it is.</msg>
-<status status="FAIL" starttime="20210606 16:40:14.684" endtime="20210606 16:40:14.931"/>
+<msg timestamp="20210606 17:02:44.471" level="FAIL">The element 'class:NewAddress-fieldErrorText , Phone number is not accurate' should not be visible, but it is.</msg>
+<status status="FAIL" starttime="20210606 17:02:44.183" endtime="20210606 17:02:44.471"/>
 </kw>
-<status status="FAIL" starttime="20210606 16:40:14.089" endtime="20210606 16:40:14.931"/>
+<status status="FAIL" starttime="20210606 17:02:43.629" endtime="20210606 17:02:44.471"/>
 </kw>
-<status status="FAIL" starttime="20210606 16:40:10.120" endtime="20210606 16:40:14.932"/>
+<status status="FAIL" starttime="20210606 17:02:36.215" endtime="20210606 17:02:44.471"/>
 </kw>
-<status status="FAIL" starttime="20210606 16:40:00.606" endtime="20210606 16:40:14.932"/>
-</kw>
-<kw name="FinishTests" library="CommonResources" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210606 16:40:14.932" endtime="20210606 16:40:15.010"/>
-</kw>
-<status status="PASS" starttime="20210606 16:40:14.932" endtime="20210606 16:40:15.010"/>
-</kw>
-<status status="FAIL" starttime="20210606 16:39:33.992" endtime="20210606 16:40:15.010">The element 'class:NewAddress-fieldErrorText , Phone number is not accurate' should not be visible, but it is.</status>
-</test>
-<test id="s1-t2" name="LoginTest">
-<kw name="StartTests" library="CommonResources" type="SETUP">
-<kw name="launchBrowser" library="CommonResources">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210606 16:40:15.012" level="INFO">Opening browser 'chrome' to base url 'https://www.ounass.ae/'.</msg>
-<status status="PASS" starttime="20210606 16:40:15.012" endtime="20210606 16:40:22.713"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210606 16:40:22.713" endtime="20210606 16:40:22.866"/>
-</kw>
-<status status="PASS" starttime="20210606 16:40:15.011" endtime="20210606 16:40:22.867"/>
-</kw>
-<status status="PASS" starttime="20210606 16:40:15.011" endtime="20210606 16:40:22.867"/>
-</kw>
-<kw name="dismissDialog" library="CommonResources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${dialogBoxCancel}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:22.867" endtime="20210606 16:40:25.685"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${dialogBoxCancel}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:25.686" level="INFO">Clicking button 'id:wzrk-cancel'.</msg>
-<status status="PASS" starttime="20210606 16:40:25.685" endtime="20210606 16:40:26.984"/>
-</kw>
-<status status="PASS" starttime="20210606 16:40:22.867" endtime="20210606 16:40:26.984"/>
-</kw>
-<kw name="navigateFBLogin" library="CommonResources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${account}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:26.984" endtime="20210606 16:40:27.098"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${account}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:27.098" level="INFO">Clicking button 'class:Popup-button'.</msg>
-<status status="PASS" starttime="20210606 16:40:27.098" endtime="20210606 16:40:27.801"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${fbDiv}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:27.801" endtime="20210606 16:40:27.838"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${fbLogin}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:27.838" level="INFO">Clicking button 'class:SignInThirdpartyButtons-facebookButton'.</msg>
-<status status="PASS" starttime="20210606 16:40:27.838" endtime="20210606 16:40:28.015"/>
-</kw>
-<status status="PASS" starttime="20210606 16:40:26.984" endtime="20210606 16:40:28.015"/>
-</kw>
-<kw name="LoginFB" library="CommonResources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${fbPage}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:28.015" endtime="20210606 16:40:32.187"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${fbEmail}</arg>
-<arg>samad@werplay.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:32.187" level="INFO">Typing text 'samad@werplay.com' into text field 'id:email'.</msg>
-<status status="PASS" starttime="20210606 16:40:32.187" endtime="20210606 16:40:32.691"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>${fbPass}</arg>
-<arg>werplayru55</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:32.691" level="INFO">Typing text 'werplayru55' into text field 'id:pass'.</msg>
-<status status="PASS" starttime="20210606 16:40:32.691" endtime="20210606 16:40:32.948"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${fbLoginBtn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:32.948" level="INFO">Clicking button 'id:loginbutton'.</msg>
-<status status="PASS" starttime="20210606 16:40:32.948" endtime="20210606 16:40:34.024"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${Wait}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:34.024" endtime="20210606 16:40:46.311"/>
-</kw>
-<status status="PASS" starttime="20210606 16:40:28.015" endtime="20210606 16:40:46.311"/>
-</kw>
-<kw name="checkEmaileditDisabled" library="CommonResources">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${accDiv}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:46.312" endtime="20210606 16:40:46.351"/>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>${accDiv}</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20210606 16:40:46.351" level="INFO">Simulating Mouse Over on element 'class:Popup-iconText'.</msg>
-<status status="PASS" starttime="20210606 16:40:46.351" endtime="20210606 16:40:46.691"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${myAccount}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:46.691" level="INFO">Clicking link 'My Account'.</msg>
-<status status="PASS" starttime="20210606 16:40:46.691" endtime="20210606 16:40:55.202"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${accDetailsDiv}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:55.202" endtime="20210606 16:40:55.230"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${edit}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20210606 16:40:55.230" level="INFO">Clicking link 'Edit'.</msg>
-<status status="PASS" starttime="20210606 16:40:55.230" endtime="20210606 16:40:58.425"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${emailDetails}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20210606 16:40:58.425" endtime="20210606 16:40:58.453"/>
-</kw>
-<kw name="Element Should Be Disabled" library="SeleniumLibrary">
-<arg>${emailDetails}</arg>
-<doc>Verifies that element identified by ``locator`` is disabled.</doc>
-<status status="PASS" starttime="20210606 16:40:58.454" endtime="20210606 16:40:58.463"/>
-</kw>
-<status status="PASS" starttime="20210606 16:40:46.311" endtime="20210606 16:40:58.463"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210606 16:40:58.463" endtime="20210606 16:40:58.553"/>
+<status status="FAIL" starttime="20210606 17:02:27.111" endtime="20210606 17:02:44.471"/>
 </kw>
 <kw name="FinishTests" library="CommonResources" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210606 16:40:58.553" endtime="20210606 16:40:58.554"/>
+<status status="PASS" starttime="20210606 17:02:44.471" endtime="20210606 17:02:44.554"/>
 </kw>
-<status status="PASS" starttime="20210606 16:40:58.553" endtime="20210606 16:40:58.554"/>
+<status status="PASS" starttime="20210606 17:02:44.471" endtime="20210606 17:02:44.554"/>
 </kw>
-<doc>Valid Login / Email editing disabled post login]</doc>
-<status status="PASS" starttime="20210606 16:40:15.011" endtime="20210606 16:40:58.554"/>
-</test>
-<test id="s1-t3" name="CheckOut">
-<kw name="StartTests" library="CommonResources" type="SETUP">
-<kw name="launchBrowser" library="CommonResources">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210606 16:40:58.556" level="INFO">Opening browser 'chrome' to base url 'https://www.ounass.ae/'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="FAIL" starttime="20210606 16:41:16.229" endtime="20210606 16:41:16.230"/>
-</kw>
-<msg timestamp="20210606 16:41:16.230" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
-<status status="FAIL" starttime="20210606 16:40:58.555" endtime="20210606 16:41:16.230"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20210606 16:41:16.231" endtime="20210606 16:41:16.231"/>
-</kw>
-<status status="FAIL" starttime="20210606 16:40:58.555" endtime="20210606 16:41:16.231"/>
-</kw>
-<status status="FAIL" starttime="20210606 16:40:58.555" endtime="20210606 16:41:16.232"/>
-</kw>
-<kw name="FinishTests" library="CommonResources" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<msg timestamp="20210606 16:41:16.235" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fe428258be0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bea487c2949cf497a1f57910a8e2fd52</msg>
-<msg timestamp="20210606 16:41:16.236" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fe428258d60&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bea487c2949cf497a1f57910a8e2fd52</msg>
-<msg timestamp="20210606 16:41:16.239" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fe428258eb0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bea487c2949cf497a1f57910a8e2fd52</msg>
-<status status="PASS" starttime="20210606 16:41:16.233" endtime="20210606 16:41:16.241"/>
-</kw>
-<status status="PASS" starttime="20210606 16:41:16.232" endtime="20210606 16:41:16.241"/>
-</kw>
-<doc>Shop Items and proceed to checkout</doc>
-<status status="FAIL" starttime="20210606 16:40:58.554" endtime="20210606 16:41:16.241">Setup failed:
-Execution terminated by signal</status>
-</test>
-<test id="s1-t4" name="ProductListing">
-<doc>Search for designer items resulting items should be 2 and accurate</doc>
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20210606 16:41:16.242" endtime="20210606 16:41:16.243">Test execution stopped due to a fatal error.</status>
+<doc>Register new user/ Verify Email and add Ph no</doc>
+<status status="FAIL" starttime="20210606 17:01:57.210" endtime="20210606 17:02:44.555">The element 'class:NewAddress-fieldErrorText , Phone number is not accurate' should not be visible, but it is.</status>
 </test>
 <doc>Ounass Automation Framework Prototype</doc>
-<status status="FAIL" starttime="20210606 16:39:33.876" endtime="20210606 16:41:16.244"/>
+<status status="FAIL" starttime="20210606 17:01:57.089" endtime="20210606 17:02:44.555"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="3" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="2" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
-<stat pass="0" fail="1" skip="0">robot:exit</stat>
 </tag>
 <suite>
-<stat pass="1" fail="3" skip="0" id="s1" name="TestSuite">TestSuite</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TestSuiteArabic">TestSuiteArabic</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210606 16:41:16.230" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Execution terminated by signal</msg>
-<msg timestamp="20210606 16:41:16.235" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fe428258be0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bea487c2949cf497a1f57910a8e2fd52</msg>
-<msg timestamp="20210606 16:41:16.236" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fe428258d60&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bea487c2949cf497a1f57910a8e2fd52</msg>
-<msg timestamp="20210606 16:41:16.239" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x7fe428258eb0&gt;: Failed to establish a new connection: [Errno 61] Connection refused')': /session/bea487c2949cf497a1f57910a8e2fd52</msg>
 </errors>
 </robot>

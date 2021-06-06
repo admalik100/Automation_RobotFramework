@@ -6,11 +6,12 @@ Test Teardown  FinishTests
 
 *** Test Cases ***
 Register User Verify Email And Update Ph No
+    [Documentation]  Register new user/ Verify Email and add Ph no
     dismissDialog
     NavigateToRegisterUser
     VerifyEmailAndAddPhNo
 LoginTest
-    [Documentation]  Valid Login / Email editing disabled post login]
+    [Documentation]  Valid Login / Email editing disabled post login
     dismissDialog
     navigateFBLogin
     loginfb
