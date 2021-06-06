@@ -56,7 +56,7 @@ ${addressBook}  link:My Address Book
 ${addAddress}  class:EmptyPage-callToAction
 ${navBar}  class:CategoryNavigation-wrapper
 ${accountNav}  class:Popup-button
-${dum}  class:SellingPoints-title
+${Wait}  class:SellingPoints-title
 
 *** Keywords ***
 StartTests
@@ -77,6 +77,7 @@ LoginFB
     input text  ${fbEmail}  samad@werplay.com
     input text  ${fbPass}  werplayru55
     click button  ${fbLoginBtn}
+    wait until element is visible  ${Wait}
 checkEmaileditDisabled
     wait until element is visible  ${accDiv}
     mouse over  ${accDiv}
@@ -164,7 +165,7 @@ NavigateToRegisterUser
     input text  ${registerEmail}  ${emailGenerated}
     input text  ${registerPwd}  123456789
     click button  ${registerSubmit}
-    wait until element is visible  ${dum}
+    wait until element is visible  ${Wait}
 VerifyEmailAndAddPhNo
     checkEmaileditDisabled
     AddPhNo
