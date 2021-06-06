@@ -31,5 +31,10 @@ ProductListing
     dismissDialog
     Search For Designer
     Validate Designer Results
-
+Arabic Register User Verify Email And Update Ph No
+    [Documentation]  Register new user/ Verify Email and add Ph no
+    dismissDialog
+    ChangeLanguageToArabic
+    NavigateToRegisterUser
+    VerifyEmailAndAddPhNoArabic
 *** Keywords ***
